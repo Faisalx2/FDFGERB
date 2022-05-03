@@ -1,9 +1,9 @@
 --[[
-𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌
+Source Dreem
 ----
-dev: @X_J_5
-dev2: @N__P_8
-ch: @zFFF8
+Ace : @X_J_5
+Ace : @N_P_8
+Source Updates : @CSSS3
 --]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
@@ -154,7 +154,7 @@ Status = 0
 DevelopersQ = Redis:sismember(FDFGERB.."FDFGERB:DevelopersQ:Groups",UserId) 
 if UserId == 5076013638 then
 Status = true
-elseif UserId == 5124711331 then
+elseif UserId == 5076013638 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -179,7 +179,7 @@ Distinguished = Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..ChatId,U
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 5076013638 then
 Status = 'Ace🎖'
-elseif UserId == 5124711331 then
+elseif UserId == 5076013638 then
 Status = 'Ace🎖'
 elseif UserId == Sudo_Id then  
 Status = 'Dev🎖'
@@ -188,11 +188,11 @@ Status = 'البوت'
 elseif DevelopersQ then
 Status = 'Myth🎖️'
 elseif Developers then
-Status = Redis:get(FDFGERB.."FDFGERB:Developer:Bot:Reply"..ChatId) or 'Myth'
+Status = Redis:get(FDFGERB.."FDFGERB:Developer:Bot:Reply"..ChatId) or 'Master🎖'
 elseif TheBasics then
-Status = Redis:get(FDFGERB.."FDFGERB:President:Group:Reply"..ChatId) or 'المنشى الاساسي'
+Status = Redis:get(FDFGERB.."FDFGERB:President:Group:Reply"..ChatId) or 'المالك الاساسي'
 elseif Originators then
-Status = Redis:get(FDFGERB.."FDFGERB:Constructor:Group:Reply"..ChatId) or 'المنشى'
+Status = Redis:get(FDFGERB.."FDFGERB:Constructor:Group:Reply"..ChatId) or 'المالك'
 elseif Managers then
 Status = Redis:get(FDFGERB.."FDFGERB:Manager:Group:Reply"..ChatId) or 'المدير'
 elseif Addictive then
@@ -213,9 +213,9 @@ Status = 'Myth🎖️'
 elseif tonumber(Num) == 3 then  
 Status = 'Myth'
 elseif tonumber(Num) == 4 then  
-Status = 'المنشى الاساسي'
+Status = 'المالك الاساسي'
 elseif tonumber(Num) == 5 then  
-Status = 'المنشى'
+Status = 'المالك'
 elseif tonumber(Num) == 6 then  
 Status = 'المدير'
 elseif tonumber(Num) == 7 then  
@@ -269,6 +269,19 @@ data = {
 }
 }
 LuaTele.editMessageText(ChatId,MsgId,"• صلاحيات الادمن • ", 'md', false, false, reply_markupp)
+end
+function oger(Message)
+year = math.floor(Message / 31536000)
+byear = Message % 31536000 
+month = math.floor(byear / 2592000)
+bmonth = byear % 2592000 
+day = math.floor(bmonth / 86400)
+bday = bmonth % 86400 
+hours = math.floor( bday / 3600)
+bhours = bday % 3600 
+minx = math.floor(bhours / 60)
+sec = math.floor(bhours % 3600) % 60
+return string.format("%02d:%02d", minx, sec)
 end
 function GetAdminsNum(ChatId,UserId)
 local GetMemberStatus = LuaTele.getChatMember(ChatId,UserId).status
@@ -732,11 +745,11 @@ else
 UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..')'
 end
 return {
-Lock     = '\n• بواسطة ↤ '..UserInfousername..'\n'..TextMsg..'\n ',
-unLock  = '\n• بواسطة ↤ '..UserInfousername..'\n'..TextMsg..'\n ',
-lockKtm  = '\n• بوسطة ↤ '..UserInfousername..'\n'..TextMsg..'\n ',
-lockKid  = '\n• بواسطة ↤ '..UserInfousername..' \n'..TextMsg..'\n ',
-lockKick = '\n• بواسطة ↤ '..UserInfousername..'\n'..TextMsg..'\n ',
+Lock     = '\n• بواسطة ↢ '..UserInfousername..'\n'..TextMsg..'\n ',
+unLock  = '\n• بواسطة ↢ '..UserInfousername..'\n'..TextMsg..'\n ',
+lockKtm  = '\n• بوسطة ↢ '..UserInfousername..'\n'..TextMsg..'\n ',
+lockKid  = '\n• بواسطة ↢ '..UserInfousername..' \n'..TextMsg..'\n ',
+lockKick = '\n• بواسطة ↢ '..UserInfousername..'\n'..TextMsg..'\n ',
 Reply    = '\n「 '..UserInfousername..' 」\n'..TextMsg..'\n '
 }
 end
@@ -752,7 +765,7 @@ Distinguished = Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..ChatId,U
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 5076013638 then
 Status = true
-elseif UserId == 5124711331 then
+elseif UserId == 5076013638 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -792,7 +805,7 @@ Distinguished = Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..ChatId,U
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 5076013638 then
 Status = true
-elseif UserId == 5124711331 then
+elseif UserId == 5076013638 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -922,7 +935,7 @@ end
 if tonumber(msg.sender.user_id) == 5076013638 then
 msg.Name_Controller = 'Ace🎖 '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 5124711331 then
+elseif tonumber(msg.sender.user_id) == 5076013638 then
 msg.Name_Controller = 'Ace🎖'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -933,13 +946,13 @@ msg.The_Controller = 2
 msg.Name_Controller = 'Myth🎖️'
 elseif Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",msg.sender.user_id) == true then
 msg.The_Controller = 3
-msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:Developer:Bot:Reply"..msg.chat_id) or 'Myth'
+msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:Developer:Bot:Reply"..msg.chat_id) or 'Master🎖'
 elseif Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg.chat_id,msg.sender.user_id) == true then
 msg.The_Controller = 4
-msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:President:Group:Reply"..msg.chat_id) or 'المنشى الاساسي'
+msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:President:Group:Reply"..msg.chat_id) or 'المالك الاساسي'
 elseif Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg.chat_id,msg.sender.user_id) == true then
 msg.The_Controller = 5
-msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:Constructor:Group:Reply"..msg.chat_id) or 'المنشى '
+msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:Constructor:Group:Reply"..msg.chat_id) or 'المالك '
 elseif Redis:sismember(FDFGERB.."FDFGERB:Managers:Group"..msg.chat_id,msg.sender.user_id) == true then
 msg.The_Controller = 6
 msg.Name_Controller = Redis:get(FDFGERB.."FDFGERB:Manager:Group:Reply"..msg.chat_id) or 'المدير '
@@ -987,8 +1000,6 @@ if msg.content.luatele == "messageChatJoinByLink" then
 if Redis:get(FDFGERB.."FDFGERB:Status:Welcome"..msg_chat_id) then
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
-local date =  "\n ساعة دخول : "..os.date("%Y/%m/%d")
-local time = "\n وقت دخول : "..os.date("%I:%M%p")
 local Welcome = Redis:get(FDFGERB.."FDFGERB:Welcome:Group"..msg_chat_id)
 if Welcome then 
 if UserInfo.username then
@@ -1001,7 +1012,7 @@ Welcome = Welcome:gsub('{user}',UserInfousername)
 Welcome = Welcome:gsub('{NameCh}',Get_Chat.title) 
 return LuaTele.sendText(msg_chat_id,msg_id,Welcome,"md")  
 else
-return LuaTele.sendText(msg_chat_id,msg_id,'- منور \nاسمك : '..UserInfo.first_name..'\nيوزرك : '..UserInfousername..'\n'..time..'\n'..date..'',"md")  
+return LuaTele.sendText(msg_chat_id,msg_id,' • اطلق دخول ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')\n • نورت القروب {'..Get_Chat.title..'}',"md")  
 end
 end
 end
@@ -1165,7 +1176,16 @@ end
 end
 end
 end 
-
+if msg then
+local UserInfo = LuaTele.getUser(msg.sender.user_id)
+if UserInfo.first_name then
+NameLUser = UserInfo.first_name
+NameLUser = NameLUser:gsub("]","")
+NameLUser = NameLUser:gsub("[[]","")
+local data = LuaTele.getChat(msg.chat_id)
+Redis:set(FDFGERB..':toob:Name:'..msg.sender.user_id,NameLUser)
+end
+end
 if msg.content.luatele == "messageContact" and not msg.Distinguished then  -- الجهات
 local Contact_Group = Redis:get(FDFGERB.."FDFGERB:Lock:Contact"..msg_chat_id)
 if Contact_Group == "del" then
@@ -1457,9 +1477,9 @@ if NewCmmd then
 Redis:del(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..text)
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:New"..msg_chat_id)
 Redis:srem(FDFGERB.."FDFGERB:Command:List:Group"..msg_chat_id,text)
-LuaTele.sendText(msg_chat_id,msg_id,"• تم ازالة هاذا ←  "..text.." ","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"• تم ازالة هاذا ↢ ( "..text.." ) ","md",true)
 else
-LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد امر بهاذا الاسم","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"• لايوجد امر اسمه كذا ","md",true)
 end
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id)
 return false
@@ -1468,19 +1488,299 @@ if text and Redis:get(FDFGERB.."FDFGERB:Command:Reids:Group"..msg_chat_id..":"..
 Redis:set(FDFGERB.."FDFGERB:Command:Reids:Group:New"..msg_chat_id,text)
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id)
 Redis:set(FDFGERB.."FDFGERB:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id,"true1") 
-return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل الامر الجديد ليتم وضعه مكان القديم","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل الامر الجديد ليتم وضعه مكان القديم ","md",true)  
 end
 if text and Redis:get(FDFGERB.."FDFGERB:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id) == "true1" then
 local NewCmd = Redis:get(FDFGERB.."FDFGERB:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(FDFGERB.."FDFGERB:Command:List:Group"..msg_chat_id,text)
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم حفظ الامر باسم ←  "..text..' ',"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم حفظ الامر باسم ↢ ( "..text..' ) ',"md",true)
 end
+if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر •' then   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء الاذاعه للمجموعات","md",true)  
+end 
+local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd") 
+if msg.content.video_note then
+for k,v in pairs(list) do 
+LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.video_note.video.remote.id)
+end
+elseif msg.content.photo then
+if msg.content.photo.sizes[1].photo.remote.id then
+idPhoto = msg.content.photo.sizes[1].photo.remote.id
+elseif msg.content.photo.sizes[2].photo.remote.id then
+idPhoto = msg.content.photo.sizes[2].photo.remote.id
+elseif msg.content.photo.sizes[3].photo.remote.id then
+idPhoto = msg.content.photo.sizes[3].photo.remote.id
+end
+for k,v in pairs(list) do 
+LuaTele.sendPhoto(v, 0, idPhoto,'')
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,idPhoto)
+end
+elseif msg.content.sticker then 
+for k,v in pairs(list) do 
+LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.sticker.sticker.remote.id)
+end
+elseif msg.content.voice_note then 
+for k,v in pairs(list) do 
+LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.voice_note.voice.remote.id)
+end
+elseif msg.content.video then 
+for k,v in pairs(list) do 
+LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.video.video.remote.id)
+end
+elseif msg.content.animation then 
+for k,v in pairs(list) do 
+LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.animation.animation.remote.id)
+end
+elseif msg.content.document then
+for k,v in pairs(list) do 
+LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.document.document.remote.id)
+end
+elseif msg.content.audio then
+for k,v in pairs(list) do 
+LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.audio.audio.remote.id)
+end
+elseif text then
+for k,v in pairs(list) do 
+LuaTele.sendText(v,0,text,"md",true)
+Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,text)
+end
+end
+LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ","md",true)      
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return false
+end
+------------------------------------------------------------------------------------------------------------
+if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر •' then   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء الاذاعه خاص","md",true)  
+end 
+local list = Redis:smembers(FDFGERB..'FDFGERB:Num:User:Pv')  
+if msg.content.video_note then
+for k,v in pairs(list) do 
+LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
+end
+elseif msg.content.photo then
+if msg.content.photo.sizes[1].photo.remote.id then
+idPhoto = msg.content.photo.sizes[1].photo.remote.id
+elseif msg.content.photo.sizes[2].photo.remote.id then
+idPhoto = msg.content.photo.sizes[2].photo.remote.id
+elseif msg.content.photo.sizes[3].photo.remote.id then
+idPhoto = msg.content.photo.sizes[3].photo.remote.id
+end
+for k,v in pairs(list) do 
+LuaTele.sendPhoto(v, 0, idPhoto,'')
+end
+elseif msg.content.sticker then 
+for k,v in pairs(list) do 
+LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
+end
+elseif msg.content.voice_note then 
+for k,v in pairs(list) do 
+LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
+end
+elseif msg.content.video then 
+for k,v in pairs(list) do 
+LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
+end
+elseif msg.content.animation then 
+for k,v in pairs(list) do 
+LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
+end
+elseif msg.content.document then
+for k,v in pairs(list) do 
+LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
+end
+elseif msg.content.audio then
+for k,v in pairs(list) do 
+LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
+end
+elseif text then
+for k,v in pairs(list) do 
+LuaTele.sendText(v,0,text,"md",true)
+end
+end
+LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مشترك في البوت ","md",true)      
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return false
+end
+------------------------------------------------------------------------------------------------------------
+if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر •' then   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء الاذاعه للمجموعات","md",true)  
+end 
+local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd") 
+if msg.content.video_note then
+for k,v in pairs(list) do 
+LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
+end
+elseif msg.content.photo then
+if msg.content.photo.sizes[1].photo.remote.id then
+idPhoto = msg.content.photo.sizes[1].photo.remote.id
+elseif msg.content.photo.sizes[2].photo.remote.id then
+idPhoto = msg.content.photo.sizes[2].photo.remote.id
+elseif msg.content.photo.sizes[3].photo.remote.id then
+idPhoto = msg.content.photo.sizes[3].photo.remote.id
+end
+for k,v in pairs(list) do 
+LuaTele.sendPhoto(v, 0, idPhoto,'')
+end
+elseif msg.content.sticker then 
+for k,v in pairs(list) do 
+LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
+end
+elseif msg.content.voice_note then 
+for k,v in pairs(list) do 
+LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
+end
+elseif msg.content.video then 
+for k,v in pairs(list) do 
+LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
+end
+elseif msg.content.animation then 
+for k,v in pairs(list) do 
+LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
+end
+elseif msg.content.document then
+for k,v in pairs(list) do 
+LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
+end
+elseif msg.content.audio then
+for k,v in pairs(list) do 
+LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
+end
+elseif text then
+for k,v in pairs(list) do 
+LuaTele.sendText(v,0,text,"md",true)
+end
+end
+LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ","md",true)      
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return false
+end
+------------------------------------------------------------------------------------------------------------
+if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر' then   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء الاذاعه بالتوجيه للمجموعات","md",true)    
+end 
+if msg.forward_info then 
+local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd")   
+LuaTele.sendText(msg_chat_id,msg_id,"• تم التوجيه الى *- "..#list.." * مجموعه في البوت ","md",true)      
+for k,v in pairs(list) do  
+LuaTele.forwardMessages(v, msg_chat_id, msg_id,0,0,true,false,false)
+end   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+end 
+return false
+end
+------------------------------------------------------------------------------------------------------------
+if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر •' then   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء الاذاعه بالتوجيه خاص","md",true)    
+end 
+if msg.forward_info then 
+local list = Redis:smembers(FDFGERB.."FDFGERB:Num:User:Pv")   
+LuaTele.sendText(msg_chat_id,msg_id,"• تم التوجيه الى *- "..#list.." * مجموعه في البوت ","md",true) 
+for k,v in pairs(list) do  
+LuaTele.forwardMessages(v, msg_chat_id, msg_id,0,1,msg.media_album_id,false,true)
+end   
+Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
+end 
+return false
+end
+if text and Redis:get(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id) then
+if text == 'الغاء' or text == 'الغاء الامر' then 
+Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
+return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا عزيزي , تم الغاء تغيير كليشه Dev🎖')
+end
+Redis:set(FDFGERB..'FDFGERB:Texting:DevFDFGERB',text)
+Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
+return LuaTele.sendText(msg_chat_id,msg_id,'• تم حفظ كليشة Dev🎖')
+end
+if Redis:get(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) then 
+if text == 'الغاء' then 
+LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء تعيين الايدي عام ","md",true)  
+Redis:del(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) 
+return false  
+end 
+Redis:del(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) 
+Redis:set(FDFGERB.."FDFGERB:Set:Id:all",text:match("(.*)"))
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- تغيير الايدي عام', data = msg.sender.user_id..'/chenidam'},
+},
+{
+{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
+},
+{
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url='https://t.me/CSSS3'},
+},
+}
+}
+LuaTele.sendText(msg_chat_id,msg_id,'• تم تعين الايدي عام الجديد',"md",true, false, false, false, reply_markup)
+end
+if Redis:get(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) then 
+if text == 'الغاء' then 
+LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء تعيين الايدي ","md",true)  
+Redis:del(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) 
+return false  
+end 
+Redis:del(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) 
+Redis:set(FDFGERB.."FDFGERB:Set:Id:Group"..msg.chat_id,text:match("(.*)"))
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- تغيير الايدي', data = msg.sender.user_id..'/chenid'},
+},
+{
+{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
+},
+{
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url='https://t.me/CSSS3'},
+},
+}
+}
+LuaTele.sendText(msg_chat_id,msg_id,'• تم تعين الايدي الجديد',"md",true, false, false, false, reply_markup)
+end
+if Redis:get(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر' then   
+Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء اسم البوت ","md",true)  
+end 
+Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
+Redis:set(FDFGERB.."FDFGERB:Name:Bot",text) 
+return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير اسم البوت الى • "..text,"md",true)    
+end 
+if Redis:get(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) then 
+if text == "الغاء" or text == 'الغاء الامر' then   
+Redis:del(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء تغيير كليشه start","md",true)  
+end 
+Redis:del(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) 
+Redis:set(FDFGERB.."FDFGERB:Start:Bot",text) 
+return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير كليشه start • "..text,"md",true)    
+end 
 if Redis:get(FDFGERB.."FDFGERB:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text == "الغاء" then
 Redis:del(FDFGERB.."FDFGERB:Set:Link"..msg_chat_id..""..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم الغاء حفظ الرابط","md",true)         
+return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء الرابط","md",true)         
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local LinkGroup = text:match("(https://telegram.me/joinchat/%S+)") or text:match("(https://t.me/joinchat/%S+)")   
@@ -1492,7 +1792,7 @@ end
 if Redis:get(FDFGERB.."FDFGERB:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(FDFGERB.."FDFGERB:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id)  
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم الغاء حفظ الترحيب","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء الترحيب ","md",true)   
 end 
 Redis:del(FDFGERB.."FDFGERB:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id)  
 Redis:set(FDFGERB.."FDFGERB:Welcome:Group"..msg_chat_id,text) 
@@ -1501,7 +1801,7 @@ end
 if Redis:get(FDFGERB.."FDFGERB:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(FDFGERB.."FDFGERB:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم الغاء حفظ القوانين","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء القوانين","md",true)   
 end 
 Redis:set(FDFGERB.."FDFGERB:Group:Rules" .. msg_chat_id,text) 
 Redis:del(FDFGERB.."FDFGERB:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id)
@@ -1510,7 +1810,7 @@ end
 if Redis:get(FDFGERB.."FDFGERB:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(FDFGERB.."FDFGERB:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم الغاء حفظ وصف المجموعه","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء الوصف","md",true)   
 end 
 LuaTele.setChatDescription(msg_chat_id,text) 
 Redis:del(FDFGERB.."FDFGERB:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id)
@@ -1518,7 +1818,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"• تم حفظ وصف المجمو�
 end 
 if text == "الغاء" then 
 Redis:del(FDFGERB.."FDFGERB:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء كل شي","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• اهلا عزيزي , تم الغاء الرد","md",true)   
 end
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
 local test = Redis:get(FDFGERB.."FDFGERB:Text:Manager"..msg.sender.user_id..":"..msg_chat_id.."")
@@ -1590,7 +1890,7 @@ data = {
 {text = '', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url='https://t.me/zFFF8'},
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url='https://t.me/CSSS3'},
 },
 }
 }
@@ -1784,7 +2084,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url='https://t.me/zFFF8'},
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url='https://t.me/CSSS3'},
 },
 }
 }
@@ -1814,286 +2114,6 @@ Redis:srem(FDFGERB.."FDFGERB:List:Rd:Sudo", text)
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم حذف الرد من الردود العامه","md",true)  
 end
 end
-if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء الاذاعه للمجموعات","md",true)  
-end 
-local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd") 
-if msg.content.video_note then
-for k,v in pairs(list) do 
-LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.video_note.video.remote.id)
-end
-elseif msg.content.photo then
-if msg.content.photo.sizes[1].photo.remote.id then
-idPhoto = msg.content.photo.sizes[1].photo.remote.id
-elseif msg.content.photo.sizes[2].photo.remote.id then
-idPhoto = msg.content.photo.sizes[2].photo.remote.id
-elseif msg.content.photo.sizes[3].photo.remote.id then
-idPhoto = msg.content.photo.sizes[3].photo.remote.id
-end
-for k,v in pairs(list) do 
-LuaTele.sendPhoto(v, 0, idPhoto,'')
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,idPhoto)
-end
-elseif msg.content.sticker then 
-for k,v in pairs(list) do 
-LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.sticker.sticker.remote.id)
-end
-elseif msg.content.voice_note then 
-for k,v in pairs(list) do 
-LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.voice_note.voice.remote.id)
-end
-elseif msg.content.video then 
-for k,v in pairs(list) do 
-LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.video.video.remote.id)
-end
-elseif msg.content.animation then 
-for k,v in pairs(list) do 
-LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.animation.animation.remote.id)
-end
-elseif msg.content.document then
-for k,v in pairs(list) do 
-LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.document.document.remote.id)
-end
-elseif msg.content.audio then
-for k,v in pairs(list) do 
-LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,msg.content.audio.audio.remote.id)
-end
-elseif text then
-for k,v in pairs(list) do 
-LuaTele.sendText(v,0,text,"md",true)
-Redis:set(FDFGERB.."FDFGERB:PinMsegees:"..v,text)
-end
-end
-LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ","md",true)      
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return false
-end
-------------------------------------------------------------------------------------------------------------
-if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء الاذاعه خاص","md",true)  
-end 
-local list = Redis:smembers(FDFGERB..'FDFGERB:Num:User:Pv')  
-if msg.content.video_note then
-for k,v in pairs(list) do 
-LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
-end
-elseif msg.content.photo then
-if msg.content.photo.sizes[1].photo.remote.id then
-idPhoto = msg.content.photo.sizes[1].photo.remote.id
-elseif msg.content.photo.sizes[2].photo.remote.id then
-idPhoto = msg.content.photo.sizes[2].photo.remote.id
-elseif msg.content.photo.sizes[3].photo.remote.id then
-idPhoto = msg.content.photo.sizes[3].photo.remote.id
-end
-for k,v in pairs(list) do 
-LuaTele.sendPhoto(v, 0, idPhoto,'')
-end
-elseif msg.content.sticker then 
-for k,v in pairs(list) do 
-LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
-end
-elseif msg.content.voice_note then 
-for k,v in pairs(list) do 
-LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
-end
-elseif msg.content.video then 
-for k,v in pairs(list) do 
-LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
-end
-elseif msg.content.animation then 
-for k,v in pairs(list) do 
-LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
-end
-elseif msg.content.document then
-for k,v in pairs(list) do 
-LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
-end
-elseif msg.content.audio then
-for k,v in pairs(list) do 
-LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
-end
-elseif text then
-for k,v in pairs(list) do 
-LuaTele.sendText(v,0,text,"md",true)
-end
-end
-LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مشترك في البوت ","md",true)      
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return false
-end
-------------------------------------------------------------------------------------------------------------
-if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء الاذاعه للمجموعات","md",true)  
-end 
-local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd") 
-if msg.content.video_note then
-for k,v in pairs(list) do 
-LuaTele.sendVideoNote(v, 0, msg.content.video_note.video.remote.id)
-end
-elseif msg.content.photo then
-if msg.content.photo.sizes[1].photo.remote.id then
-idPhoto = msg.content.photo.sizes[1].photo.remote.id
-elseif msg.content.photo.sizes[2].photo.remote.id then
-idPhoto = msg.content.photo.sizes[2].photo.remote.id
-elseif msg.content.photo.sizes[3].photo.remote.id then
-idPhoto = msg.content.photo.sizes[3].photo.remote.id
-end
-for k,v in pairs(list) do 
-LuaTele.sendPhoto(v, 0, idPhoto,'')
-end
-elseif msg.content.sticker then 
-for k,v in pairs(list) do 
-LuaTele.sendSticker(v, 0, msg.content.sticker.sticker.remote.id)
-end
-elseif msg.content.voice_note then 
-for k,v in pairs(list) do 
-LuaTele.sendVoiceNote(v, 0, msg.content.voice_note.voice.remote.id, '', 'md')
-end
-elseif msg.content.video then 
-for k,v in pairs(list) do 
-LuaTele.sendVideo(v, 0, msg.content.video.video.remote.id, '', "md")
-end
-elseif msg.content.animation then 
-for k,v in pairs(list) do 
-LuaTele.sendAnimation(v,0, msg.content.animation.animation.remote.id, '', 'md')
-end
-elseif msg.content.document then
-for k,v in pairs(list) do 
-LuaTele.sendDocument(v, 0, msg.content.document.document.remote.id, '', 'md')
-end
-elseif msg.content.audio then
-for k,v in pairs(list) do 
-LuaTele.sendAudio(v, 0, msg.content.audio.audio.remote.id, '', "md") 
-end
-elseif text then
-for k,v in pairs(list) do 
-LuaTele.sendText(v,0,text,"md",true)
-end
-end
-LuaTele.sendText(msg_chat_id,msg_id,"• تمت الاذاعه الى *- "..#list.." * مجموعه في البوت ","md",true)      
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return false
-end
-------------------------------------------------------------------------------------------------------------
-if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء الاذاعه بالتوجيه للمجموعات","md",true)    
-end 
-if msg.forward_info then 
-local list = Redis:smembers(FDFGERB.."FDFGERB:ChekBotAdd")   
-LuaTele.sendText(msg_chat_id,msg_id,"• تم التوجيه الى *- "..#list.." * مجموعه في البوت ","md",true)      
-for k,v in pairs(list) do  
-LuaTele.forwardMessages(v, msg_chat_id, msg_id,0,0,true,false,false)
-end   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-end 
-return false
-end
-------------------------------------------------------------------------------------------------------------
-if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء الاذاعه بالتوجيه خاص","md",true)    
-end 
-if msg.forward_info then 
-local list = Redis:smembers(FDFGERB.."FDFGERB:Num:User:Pv")   
-LuaTele.sendText(msg_chat_id,msg_id,"• تم التوجيه الى *- "..#list.." * مجموعه في البوت ","md",true) 
-for k,v in pairs(list) do  
-LuaTele.forwardMessages(v, msg_chat_id, msg_id,0,1,msg.media_album_id,false,true)
-end   
-Redis:del(FDFGERB.."FDFGERB:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id) 
-end 
-return false
-end
-if text and Redis:get(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id) then
-if text == 'الغاء' or text == 'الغاء الامر' then 
-Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,'• تم الغاء حفظ كليشة Dev🎖')
-end
-Redis:set(FDFGERB..'FDFGERB:Texting:DevFDFGERB',text)
-Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,'• تم حفظ كليشة Dev🎖')
-end
-if Redis:get(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) then 
-if text == 'الغاء' then 
-LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تعين الايدي عام","md",true)  
-Redis:del(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) 
-return false  
-end 
-Redis:del(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) 
-Redis:set(FDFGERB.."FDFGERB:Set:Id:all",text:match("(.*)"))
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- تغيير الايدي عام', data = msg.sender.user_id..'/chenidam'},
-},
-{
-{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
-},
-{
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url='https://t.me/zFFF8'},
-},
-}
-}
-LuaTele.sendText(msg_chat_id,msg_id,'• تم تعين الايدي عام الجديد',"md",true, false, false, false, reply_markup)
-end
-if Redis:get(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) then 
-if text == 'الغاء' then 
-LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تعين الايدي","md",true)  
-Redis:del(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) 
-return false  
-end 
-Redis:del(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id) 
-Redis:set(FDFGERB.."FDFGERB:Set:Id:Group"..msg.chat_id,text:match("(.*)"))
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- تغيير الايدي', data = msg.sender.user_id..'/chenid'},
-},
-{
-{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
-},
-{
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url='https://t.me/zFFF8'},
-},
-}
-}
-LuaTele.sendText(msg_chat_id,msg_id,'• تم تعين الايدي الجديد',"md",true, false, false, false, reply_markup)
-end
-if Redis:get(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تغيير اسم البوت","md",true)  
-end 
-Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
-Redis:set(FDFGERB.."FDFGERB:Name:Bot",text) 
-return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير اسم البوت الى • "..text,"md",true)    
-end 
-if Redis:get(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) then 
-if text == "الغاء" or text == 'الغاء الامر' then   
-Redis:del(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تغيير كليشه start","md",true)  
-end 
-Redis:del(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) 
-Redis:set(FDFGERB.."FDFGERB:Start:Bot",text) 
-return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير كليشه start • "..text,"md",true)    
-end 
 if Redis:get(FDFGERB.."FDFGERB:Game:Estimate"..msg.chat_id..msg.sender.user_id) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
@@ -2324,7 +2344,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
 os.execute('rm -rf FDFGERB.lua')
-download('https://raw.githubusercontent.com/Faisal12a/FDFGERB/blob/main/FDFGERB.lua','FDFGERB.lua')
+download('https://raw.githubusercontent.com/Fawazz77/Rhps/blob/main/FDFGERB.lua','FDFGERB.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس ',"md",true)  
 end
 if text == 'جلب النسخه الاحتياطيه' or text == 'جلب نسخه احتياطيه' then
@@ -2745,17 +2765,17 @@ end
 Get_Is_Id = Redis:get(FDFGERB.."FDFGERB:Set:Id:all") or Redis:get(FDFGERB.."FDFGERB:Set:Id:Group"..msg_chat_id)
 if Redis:get(FDFGERB.."FDFGERB:Status:IdPhoto"..msg_chat_id) then
 if Get_Is_Id then
-local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
-local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
-local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
-local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
-local Get_Is_Id = Get_Is_Id:gsub('#edit',TotalEdit) 
-local Get_Is_Id = Get_Is_Id:gsub('#stast',RinkBot) 
-local Get_Is_Id = Get_Is_Id:gsub('#bio',Bio) 
-local Get_Is_Id = Get_Is_Id:gsub('#auto',TotalMsgT) 
-local Get_Is_Id = Get_Is_Id:gsub('#Description',Description) 
-local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames) 
-local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
+local Get_Is_Id = Get_Is_Id:gsub('#الجهات',NumAdd) 
+local Get_Is_Id = Get_Is_Id:gsub('#الايدي',msg.sender.user_id) 
+local Get_Is_Id = Get_Is_Id:gsub('#اليوزر',UserInfousername) 
+local Get_Is_Id = Get_Is_Id:gsub('#الرسائل',TotalMsg) 
+local Get_Is_Id = Get_Is_Id:gsub('#التعديل',TotalEdit) 
+local Get_Is_Id = Get_Is_Id:gsub('#الرتبه',RinkBot) 
+local Get_Is_Id = Get_Is_Id:gsub('#البايو',Bio) 
+local Get_Is_Id = Get_Is_Id:gsub('#التفاعل',TotalMsgT) 
+local Get_Is_Id = Get_Is_Id:gsub('#التعليق',Description) 
+local Get_Is_Id = Get_Is_Id:gsub('#المجوهرات',NumberGames) 
+local Get_Is_Id = Get_Is_Id:gsub('#عدد الصور',TotalPhoto) 
 if photo.total_count > 0 then
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,Get_Is_Id)
 else
@@ -2765,47 +2785,47 @@ else
 if photo.total_count > 0 then
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,
 '\n'..Description..
-'\n[• ID 𖦹 '..UserId..
-'\n• UserName 𖦹 '..UserInfousername..
-'\n• Rank 𖦹 '..RinkBot..
-'\n• Photo 𖦹 '..TotalPhoto..
-'\n• Msg 𖦹 '..TotalMsg..
-'\n• Edit 𖦹 '..TotalEdit..
-'\n• Bio 𖦹 '..Bio..
+'\n[• 𝖨𝖣 : '..UserId..
+'\n• 𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾 : '..UserInfousername..
+'\n• 𝖱𝖺𝗇𝗄 : '..RinkBot..
+'\n• 𝖯𝗁𝗈𝗍𝗈 : '..TotalPhoto..
+'\n• 𝖬𝗌𝗀 : '..TotalMsg..
+'\n• 𝖤𝖽𝗂𝗍 : '..TotalEdit..
+'\n• 𝖡𝗂𝗈 : '..Bio..
 ']', "md")
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n[• ID 𖦹 '..UserId..
-'\n• UserName 𖦹 '..UserInfousername..
-'\n• Rank 𖦹 '..RinkBot..
-'\n• Msg 𖦹 '..TotalMsg..
-'\n• Edit 𖦹 '..TotalEdit..
-'\n• Bio 𖦹 '..Bio..
+'\n[• 𝖨𝖣 : '..UserId..
+'\n• 𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾 : '..UserInfousername..
+'\n• 𝖱𝖺𝗇𝗄 : '..RinkBot..
+'\n• 𝖬𝗌𝗀 : '..TotalMsg..
+'\n• 𝖤𝖽𝗂𝗍 : '..TotalEdit..
+'\n• 𝖡𝗂𝗈 : '..Bio..
 ']',"md",true) 
 end
 end
 else
 if Get_Is_Id then
-local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
-local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
-local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
-local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
-local Get_Is_Id = Get_Is_Id:gsub('#edit',TotalEdit) 
-local Get_Is_Id = Get_Is_Id:gsub('#stast',RinkBot) 
-local Get_Is_Id = Get_Is_Id:gsub('#bio',Bio) 
-local Get_Is_Id = Get_Is_Id:gsub('#auto',TotalMsgT) 
-local Get_Is_Id = Get_Is_Id:gsub('#Description',Description) 
-local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames) 
-local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
+local Get_Is_Id = Get_Is_Id:gsub('#الجهات',NumAdd) 
+local Get_Is_Id = Get_Is_Id:gsub('#الايدي',msg.sender.user_id) 
+local Get_Is_Id = Get_Is_Id:gsub('#اليوزر',UserInfousername) 
+local Get_Is_Id = Get_Is_Id:gsub('#الرسائل',TotalMsg) 
+local Get_Is_Id = Get_Is_Id:gsub('#التعديل',TotalEdit) 
+local Get_Is_Id = Get_Is_Id:gsub('#الرتبه',RinkBot) 
+local Get_Is_Id = Get_Is_Id:gsub('#البايو',Bio) 
+local Get_Is_Id = Get_Is_Id:gsub('#التفاعل',TotalMsgT) 
+local Get_Is_Id = Get_Is_Id:gsub('#التعليق',Description) 
+local Get_Is_Id = Get_Is_Id:gsub('#المجوهرات',NumberGames) 
+local Get_Is_Id = Get_Is_Id:gsub('#عدد الصور',TotalPhoto) 
 return LuaTele.sendText(msg_chat_id,msg_id,'['..Get_Is_Id..']',"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n[• ID 𖦹 '..UserId..
-'\n• UserName 𖦹 '..UserInfousername..
-'\n• Rank 𖦹 '..RinkBot..
-'\n• Msg 𖦹 '..TotalMsg..
-'\n• Edit 𖦹 '..TotalEdit..
-'\n• Bio 𖦹 '..Bio..
+'\n[• 𝖨𝖣 : '..UserId..
+'\n• 𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾 : '..UserInfousername..
+'\n• 𝖱𝖺𝗇𝗄 : '..RinkBot..
+'\n• 𝖬𝗌𝗀 : '..TotalMsg..
+'\n• 𝖤𝖽𝗂𝗍 : '..TotalEdit..
+'\n• 𝖡𝗂𝗈 : '..Bio..
 ']',"md",true) 
 end
 end
@@ -2831,7 +2851,7 @@ local TotalEdit = Redis:get(FDFGERB..'FDFGERB:Num:Message:Edit'..msg_chat_id..Me
 local TotalMsgT = Total_message(TotalMsg) 
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n• ايديه ↢ '..UserId..
-'\n• معرفه ↢ '..UserInfousername..
+'\n• معرفه ↢ @'..UserInfousername..
 '\n• رتبته ↢ '..RinkBot..
 '\n• رسائله ↢ '..TotalMsg..
 '\n• تعديلاته ↢ '..TotalEdit..
@@ -3058,24 +3078,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله Myth مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Developers:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله Master🎖 ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ اساسي" then
+if UserName[1] == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(2)..' , مالك القروب ',"md",true)  
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ اساسي" then
+if UserName[1] == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3084,13 +3104,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ" then
+if UserName[1] == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3099,10 +3119,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله من المالكين مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله من المنشئين ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم تنزيله من المالكين ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مدير" then
@@ -3185,24 +3205,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله M مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Developers:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله Master🎖 ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ اساسي" then
+if TextMsg == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(2)..' , مالك القروب ',"md",true)  
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله مالك اساسي ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ اساسي" then
+if TextMsg == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3211,13 +3231,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله مالك اساسي ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ" then
+if TextMsg == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3226,10 +3246,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله من المالكين مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله من المنشئين ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم تنزيله من المالكين ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
@@ -3316,24 +3336,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم تنزيله Myth مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم تنزيله Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Developers:Groups",UserId) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم تنزيله Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم تنزيله Master🎖 ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ اساسي" then
+if UserId[1] == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(2)..' , مالك القروب ',"md",true)  
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ اساسي" then
+if UserId[1] == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3342,13 +3362,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم مالك منشئ اساسي ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ" then
+if UserId[1] == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3357,10 +3377,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله من المالكين مسبقا ").Reply,"md",true)  
 else
 Redis:srem(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله من المنشئين ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تنزيله من المالكين ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مدير" then
@@ -3433,7 +3453,7 @@ if Redis:sismember(FDFGERB.."FDFGERB:DevelopersQ:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Myth🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:DevelopersQ:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Myth").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Myth🎖").Reply,"md",true)  
 end
 end
 if UserName[1] == "M" then
@@ -3445,24 +3465,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Myth مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Developers:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته Master🎖 ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ اساسي" then
+if UserName[1] == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(2)..' , مالك القروب ',"md",true)  
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ اساسي" then
+if UserName[1] == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3471,13 +3491,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserName[1] == "منشئ" then
+if UserName[1] == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3486,10 +3506,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته منشئ  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مالك  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مدير" then
@@ -3519,7 +3539,7 @@ if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_ch
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Addictive:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته ادمن مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Addictive:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته ادمن  ").Reply,"md",true)  
@@ -3591,24 +3611,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته Myth مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Developers:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته Master🎖 ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ اساسي" then
+if TextMsg == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(2)..' , مالك القروب ',"md",true)  
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ اساسي" then
+if TextMsg == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3617,13 +3637,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if TextMsg == "منشئ" then
+if TextMsg == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3632,10 +3652,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك  مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته منشئ  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مالك  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
@@ -3726,13 +3746,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم ترقيته Myth مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم ترقيته Master🎖 مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Developers:Groups",UserId) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم ترقيته Myth ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"• تم ترقيته Master🎖 ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ اساسي" then
+if UserId[1] == "مالك اساسي" then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" and not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(2)..' ) ',"md",true)  
 end
@@ -3741,13 +3761,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ اساسي" then
+if UserId[1] == "مالك اساسي" then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(3)..' ) ',"md",true)  
 end
@@ -3756,13 +3776,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك اساسي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ اساسي ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك اساسي ").Reply,"md",true)  
 end
 end
-if UserId[1] == "منشئ" then
+if UserId[1] == "مالك" then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -3771,10 +3791,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك  مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته منشئ  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مالك  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مدير" then
@@ -3836,20 +3856,20 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Control
 end
 Redis:set(FDFGERB.."FDFGERB:Developer:Bot:Reply"..msg.chat_id,Teext)
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير رد المطور الى :"..Teext)
-elseif text and text:match("^تغيير رد المنشئ الاساسي (.*)$") then
+elseif text and text:match("^تغيير رد المالك الاساسي (.*)$") then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
-local Teext = text:match("^تغيير رد المنشئ الاساسي (.*)$") 
+local Teext = text:match("^تغيير رد المالك الاساسي (.*)$") 
 Redis:set(FDFGERB.."FDFGERB:President:Group:Reply"..msg.chat_id,Teext)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير رد المنشئ الاساسي الى :"..Teext)
-elseif text and text:match("^تغيير رد المنشئ (.*)$") then
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير رد المالك الاساسي الى :"..Teext)
+elseif text and text:match("^تغيير رد المالك (.*)$") then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
-local Teext = text:match("^تغيير رد المنشئ (.*)$") 
+local Teext = text:match("^تغيير رد المالك (.*)$") 
 Redis:set(FDFGERB.."FDFGERB:Constructor:Group:Reply"..msg.chat_id,Teext)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير رد المنشئ الى :"..Teext)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير رد المالك الى :"..Teext)
 elseif text and text:match("^تغيير رد المدير (.*)$") then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
@@ -3884,18 +3904,18 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Control
 end
 Redis:del(FDFGERB.."FDFGERB:Developer:Bot:Reply"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح رد المطور")
-elseif text == 'مسح رد المنشئ الاساسي' then
+elseif text == 'مسح رد المالك الاساسي' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:President:Group:Reply"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح رد المنشئ الاساسي ")
-elseif text == 'مسح رد المنشئ' then
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح رد المالك الاساسي ")
+elseif text == 'مسح رد المالك' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:Constructor:Group:Reply"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح رد المنشئ ")
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح رد المالك ")
 elseif text == 'مسح رد المدير' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
@@ -3957,9 +3977,9 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:Developers:Groups") 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد Myth حاليا , ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد Master🎖 حاليا , ","md",true)  
 end
-ListMembers = '\n• قائمه Myth البوت \n ━━━━━\n'
+ListMembers = '\n• قائمه Master🎖 البوت \n ━━━━━\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3973,7 +3993,7 @@ type = 'inline',
 data = {{{text = '- مسح M', data = msg.sender.user_id..'/Developers'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
-if text == 'المنشئين الاساسيين' then
+if text == 'المالكين الاساسيين' then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" or not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(2)..' ) ',"md",true)  
 end
@@ -3985,7 +4005,7 @@ local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-ListMembers = '\n• قائمه المنشئين الاساسيين \n ━━━━━\n'
+ListMembers = '\n• قائمه المالكين الاساسيين \n ━━━━━\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -3996,10 +4016,10 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '- مسح المنشئين الاساسيين', data = msg.sender.user_id..'/TheBasics'},},}}
+data = {{{text = '- مسح المالكين الاساسيين', data = msg.sender.user_id..'/TheBasics'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
-if text == 'المنشئين' then
+if text == 'المالكين' then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -4009,9 +4029,9 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد منشئين حاليا , ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد مالكين حاليا , ","md",true)  
 end
-ListMembers = '\n• قائمه المنشئين  \n ━━━━━\n'
+ListMembers = '\n• قائمه الماكين  \n ━━━━━\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4022,7 +4042,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '- مسح المنشئين', data = msg.sender.user_id..'/Originators'},},}}
+data = {{{text = '- مسح المالكين', data = msg.sender.user_id..'/Originators'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'المدراء' then
@@ -4312,7 +4332,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url='https://t.me/zFFF8'},
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url='https://t.me/CSSS3'},
 },
 }
 }
@@ -4552,7 +4572,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text2"..test, text)  
 end
-  LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد الرابع")
+  LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثالث ارسل الرد الرابع")
 return false  
 end  
 end
@@ -4567,7 +4587,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text3"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد الخامس")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الرابع ارسل الرد الخامس")
 return false  
 end  
 end
@@ -4582,7 +4602,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text4"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد السادس")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الخامس ارسل الرد السادس")
 return false  
 end  
 end
@@ -4597,7 +4617,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text5"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد السابع")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد السادس ارسل الرد السابع")
 return false  
 end  
 end
@@ -4612,7 +4632,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text6"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد الثامن")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد السابع ارسل الرد الثامن")
 return false  
 end  
 end
@@ -4627,7 +4647,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text7"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد التاسع")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثامن ارسل الرد التاسع")
 return false  
 end  
 end
@@ -4642,7 +4662,7 @@ text = text:gsub("`","")
 text = text:gsub("","") 
 Redis:set(FDFGERB.."ardode:Add:Rd:Sudo:Text8"..test, text)  
 end
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد العاشر")
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد التاسع ارسل الرد العاشر")
 return false  
 end  
 end
@@ -4760,7 +4780,7 @@ local Text ='• تم اختيار الاغنيه'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌',url="t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳',url="t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4772,7 +4792,7 @@ local Text ='• تم اختيار قران'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌',url="t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳',url="t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4784,19 +4804,19 @@ local Text ='• تم اختيار جداريات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/usjeijw/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "افتارات عيال" or text == "افتارات عيال" then 
+if text == "افتارات عيال" or text == "افتار عيال" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار عيال'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4808,19 +4828,19 @@ local Text ='• تم اختيار هيدرات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/flflfldld/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "افتارات بنات" or text == "افتارات بنات" then 
+if text == "افتارات بنات" or text == "افتار بنات" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار بنات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4832,7 +4852,7 @@ local Text ='• تم اختيار افتار رسم'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4844,7 +4864,7 @@ local Text ='• تم اختيار افتار فكتوري'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4856,7 +4876,7 @@ local Text ='• تم اختيار افتار السينمائي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4868,7 +4888,7 @@ local Text ='• تم اختيار اقتباس'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4880,31 +4900,31 @@ local Text ='• تم اختيار عباره'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/LoreBots7/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "افتارات كيبوب" or text == "افتارات كيبوب" then 
+if text == "افتارات كيبوب" or text == "افتار كيبوب" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار كيبوب'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/djdndnddc/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == "افتارات انمي" or text == "افتارات انمي" then 
+if text == "افتارات انمي" or text == "افتار انمي" then 
 Abs = math.random(2,140); 
 local Text ='• تم اختيار افتار انمي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳'', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4916,7 +4936,7 @@ local Text ='• تم اختيار افتار فنانين'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌', url = "https://t.me/zFFF8"}
+{text = '𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚', url = "https://t.me/CSSS3"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5019,31 +5039,31 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '❲ 𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌 ❳', url = "https://t.me/zFFF8"}
+{text = '❲ Source Dreem ❳', url = "https://t.me/CSSS3"}
 },
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/X_J_5"}
+{text = '❲ Faisal ❳', url = "https://t.me/X_J_5"}
 },
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/N_P_8"}
+{text = '❲ Hsoom ❳', url = "https://t.me/N_P_8"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[Source Black](t.me/zfff8)\n\n[سورس بلاك](t.me/zFFF8)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[Source Dreem](t.me/CSSS3)","md",true, false, false, false,reply_markup)
 end
 if text == 'المطور' or text == 'مطور' or text == 'يامطور' or text == 'يا مطور' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/X_J_5"}
+{text = '❲ Faisal ❳', url = "https://t.me/X_J_5"}
 },
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/N_P_8"}
+{text = '❲ Hsoom ❳', url = "https://t.me/N_P_8"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[Source Black](t.me/zfff8)\n\n[سورس بلاك](t.me/zFFF8)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[Source Dreem](t.me/CSSS3)","md",true, false, false, false,reply_markup)
 end
 if text == 'تعطيل التحقق' then
 if not msg.Addictive then
@@ -8047,7 +8067,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(FDFGERB.."FDFGERB:Set:Link"..msg_chat_id..""..msg.sender.user_id,120,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥|ارسل رابط المجموعه او رابط قناة المجموعه","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل رابط المجموعه او رابط قناة المجموعه","md",true)  
 end
 if text == "مسح الرابط" or text == "حذف الرابط" then
 if not msg.Addictive then
@@ -8308,7 +8328,7 @@ end
 Redis:set(FDFGERB..'FDFGERB:FilterText'..msg_chat_id..':'..msg.sender.user_id,'DelFilter')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• ارسل الان  ملصق ,متحركه ,صوره ,رساله  ',"md",true)  
 end
-if text == "اضف امر" then
+if text == "اضف امر" or text == "تغير امر" then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
 end
@@ -8530,7 +8550,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- قناة السورس', url = 't.me/zFFF8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -8724,11 +8744,11 @@ if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",Message_Reply.sender.user_id) then
-dev = "Myth ،" else dev = "" end
+dev = "Master🎖 ،" else dev = "" end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id, Message_Reply.sender.user_id) then
-crr = "منشئ اساسي ،" else crr = "" end
+crr = "مالك اساسي ،" else crr = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Originators:Group'..msg_chat_id, Message_Reply.sender.user_id) then
-cr = "منشئ ،" else cr = "" end
+cr = "مالك ،" else cr = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Managers:Group'..msg_chat_id, Message_Reply.sender.user_id) then
 own = "مدير ،" else own = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Addictive:Group'..msg_chat_id, Message_Reply.sender.user_id) then
@@ -8825,11 +8845,11 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
 end
 if Redis:sismember(FDFGERB.."FDFGERB:Developers:Groups",UserId_Info.id) then
-dev = "Myth ،" else dev = "" end
+dev = "Master🎖 ،" else dev = "" end
 if Redis:sismember(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id, UserId_Info.id) then
-crr = "منشئ اساسي ،" else crr = "" end
+crr = "مالك اساسي ،" else crr = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Originators:Group'..msg_chat_id, UserId_Info.id) then
-cr = "منشئ ،" else cr = "" end
+cr = "مالك ،" else cr = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Managers:Group'..msg_chat_id, UserId_Info.id) then
 own = "مدير ،" else own = "" end
 if Redis:sismember(FDFGERB..'FDFGERB:Addictive:Group'..msg_chat_id, UserId_Info.id) then
@@ -9082,18 +9102,42 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 Redis:setex(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id,240,true)  
 return LuaTele.sendText(msg_chat_id,msg_id,[[
-• ارسل الان النص
-• يمكنك اضافه :
-• `#username` » اسم المستخدم
-• `#msgs` » عدد الرسائل
-• `#photos` » عدد الصور
-• `#id` » ايدي المستخدم
-• `#auto` » نسبة التفاعل
-• `#stast` » رتبة المستخدم 
-• `#edit` » عدد السحكات
-• `#game` » عدد المجوهرات
-• `#AddMem` » عدد الجهات
-• `#Description` » تعليق الصوره
+• اهلا عزيزي , يمكنك تعيين الايدي الان
+• يمكنك استخدام الدوال الاتية :
+• `#اليوزر` ↢ يوزر المستخدم
+• `#الرسائل` ↢ عدد الرسائل
+• `#الايدي` ↢ ايدي المستخدم
+• `#عدد الصور` ↢ عدد الصور
+• `#التفاعل` ↢ نسبة التفاعل
+• `#الرتبه` ↢ رتبه المستخدم
+• `#التعديل` ↢ عدد التعديل
+• `#المجوهرات` ↢ عدد المجوهرات
+• `#الجهات` ↢ عدد الجهات
+• `#البايو` ↢ بايو المستخدم
+]],"md",true)    
+end 
+if text == 'تعين الايدي' or text == 'تعيين الايدي' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(2)..' ) ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(FDFGERB..'FDFGERB:Channel:Join:Name')..'', url = 't.me/'..Redis:get(FDFGERB..'FDFGERB:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
+end
+Redis:setex(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id,240,true)  
+return LuaTele.sendText(msg_chat_id,msg_id,[[
+• اهلا عزيزي , يمكنك تعيين الايدي الان
+• يمكنك استخدام الدوال الاتية :
+• `#اليوزر` ↢ يوزر المستخدم
+• `#الرسائل` ↢ عدد الرسائل
+• `#الايدي` ↢ ايدي المستخدم
+• `#عدد الصور` ↢ عدد الصور
+• `#التفاعل` ↢ نسبة التفاعل
+• `#الرتبه` ↢ رتبه المستخدم
+• `#التعديل` ↢ عدد التعديل
+• `#المجوهرات` ↢ عدد المجوهرات
+• `#الجهات` ↢ عدد الجهات
+• `#البايو` ↢ بايو المستخدم
 ]],"md",true)    
 end 
 if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' then
@@ -9107,31 +9151,6 @@ end
 Redis:del(FDFGERB.."FDFGERB:Set:Id:all")
 return LuaTele.sendText(msg_chat_id,msg_id, '• تم ازالة كليشة الايدي عام ',"md",true)  
 end
-
-if text == 'تعين الايدي' or text == 'تعيين الايدي' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(FDFGERB..'FDFGERB:Channel:Join:Name')..'', url = 't.me/'..Redis:get(FDFGERB..'FDFGERB:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
-end
-Redis:setex(FDFGERB.."FDFGERB:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id,240,true)  
-return LuaTele.sendText(msg_chat_id,msg_id,[[
-• ارسل الان النص
-• يمكنك اضافه :
-• `#username` » اسم المستخدم
-• `#msgs` » عدد الرسائل
-• `#photos` » عدد الصور
-• `#id` » ايدي المستخدم
-• `#auto` » نسبة التفاعل
-• `#stast` » رتبة المستخدم 
-• `#edit` » عدد السحكات
-• `#game` » عدد المجوهرات
-• `#AddMem` » عدد الجهات
-• `#Description` » تعليق الصوره
-]],"md",true)    
-end 
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
@@ -9159,7 +9178,7 @@ if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد Myth🎖️ حاليا , ","md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:DevelopersQ:Groups") 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من قائمة CM","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من قائمة Myt🎖","md",true)
 end
 if TextMsg == 'قائمه M' then
 if not msg.DevelopersQ then
@@ -9171,12 +9190,12 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:Developers:Groups") 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد Myth حاليا , ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد Master🎖 حاليا , ","md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:Developers:Groups") 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من Myth ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من Master🎖 ","md",true)
 end
-if TextMsg == 'المنشئين الاساسيين' then
+if TextMsg == 'المالكين الاساسيين' then
 if LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele ~= "chatMemberStatusCreator" or not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(2)..' ) ',"md",true)  
 end
@@ -9186,12 +9205,12 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد منشئين اساسيين حاليا , ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد مالكين اساسيين حاليا , ","md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:TheBasics:Group"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من المنشؤين الاساسيين ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من المالكين الاساسيين ","md",true)
 end
-if TextMsg == 'المنشئين' then
+if TextMsg == 'المالكين' then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -9201,10 +9220,10 @@ return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشترا
 end
 local Info_Members = Redis:smembers(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد منشئين حاليا , ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• لا يوجد مالكين حاليا , ","md",true)  
 end
 Redis:del(FDFGERB.."FDFGERB:Originators:Group"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من المنشئين ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members.." ) من المالكين ","md",true)
 end
 if TextMsg == 'المدراء' then
 if not msg.Originators then
@@ -9863,7 +9882,7 @@ end
 LuaTele.sendText(msg_chat_id,msg_id,"\n• تم رفع القيود عنه : ( "..BanAll..BanGroup..SilentGroup..Restricted..'}',"md",true)  
 end
 
-if text == 'وضع كليشه المطور' then
+if text == 'ضع كليشه المطور' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -9910,7 +9929,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -9941,7 +9960,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -9961,7 +9980,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -9981,7 +10000,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10001,7 +10020,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10021,7 +10040,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/ZFFF8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10041,7 +10060,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/ZFFF8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10151,327 +10170,107 @@ if Redis:get(FDFGERB.."FDFGERB:Status:Games"..msg.chat_id) then
 Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","🥐","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","🍖","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","🎫","🎗","🏵","🎖","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","⚔","🛡","🔮","🌡","💣","• ","📍","📓","📗","📂","📅","📪","📫","• ","📭","⏰","📺","🎚","☎️","📡"}
 SM = Random[math.random(#Random)]
 Redis:set(FDFGERB.."FDFGERB:Game:Smile"..msg.chat_id,SM)
-return LuaTele.sendText(msg_chat_id,msg_id,"• اسرع واحد يرسل هاذا السمايل ? ~ {`"..SM.."`}","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• اسرع واحد يرسل السمايل ( `"..SM.."` )","md",true)  
 end
 end
-if text == "كت" or text == "كت تويت" then
+if text == "كت" or text == "كت تويت" or text == "تويت" then
 if Redis:get(FDFGERB.."FDFGERB:Status:Games"..msg.chat_id) then
-local texting = {"اخر افلام شاهدتها", 
-"اخر افلام شاهدتها", 
-"ما هي وظفتك الحياه", 
-"اعز اصدقائك ?", 
-"اخر اغنية سمعتها ?", 
-"تكلم عن نفسك", 
-"ليه انت مش سالك", 
-"اخر كتاب قرآته", 
-"روايتك المفضله ?", 
-"اخر اكله اكلتها", 
-"اخر كتاب قرآته", 
-"ليش حسين ذكي؟ ", 
-"افضل يوم ف حياتك", 
-"ليه مضيفتش كل جهاتك", 
-"حكمتك ف الحياه", 
-"لون عيونك", 
-"كتابك المفضل", 
-"هوايتك المفضله", 
-"علاقتك مع اهلك", 
-" ما السيء في هذه الحياة ؟ ", 
-"أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
-"سؤال ينرفزك ؟ ", 
-" اكثر ممثل تحبه ؟ ", 
-"قد تخيلت شي في بالك وصار ؟ ", 
-"شيء عندك اهم من الناس ؟ ", 
-"تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
-"وش أخر شي ضيعته؟ ", 
-"كم مره حبيت؟ ", 
-" اكثر المتابعين عندك باي برنامج؟", 
-" آخر مره ضربت عشره كانت متى ؟", 
-" نسبه الندم عندك للي وثقت فيهم ؟", 
-"تحب ترتبط بكيرفي ولا فلات؟", 
-" جربت شعور احد يحبك بس انت مو قادر تحبه؟", 
-" تجامل الناس ولا اللي بقلبك على لسانك؟", 
-" عمرك ضحيت باشياء لاجل شخص م يسوى ؟", 
-"مغني تلاحظ أن صوته يعجب الجميع إلا أنت؟ ", 
-" آخر غلطات عمرك؟ ", 
-" مسلسل كرتوني له ذكريات جميلة عندك؟ ", 
-" ما أكثر تطبيق تقضي وقتك عليه؟ ", 
-" أول شيء يخطر في بالك إذا سمعت كلمة نجوم ؟ ", 
-" قدوتك من الأجيال السابقة؟ ", 
-" أكثر طبع تهتم بأن يتواجد في شريك/ة حياتك؟ ", 
-"أكثر حيوان تخاف منه؟ ", 
-" ما هي طريقتك في الحصول على الراحة النفسية؟ ", 
-" إيموجي يعبّر عن مزاجك الحالي؟ ", 
-" أكثر تغيير ترغب أن تغيّره في نفسك؟ ", 
-"أكثر شيء أسعدك اليوم؟ ", 
-"اي رايك في الدنيا دي ؟ ", 
-"ما هو أفضل حافز للشخص؟ ", 
-"ما الذي يشغل بالك في الفترة الحالية؟", 
-"آخر شيء ندمت عليه؟ ", 
-"شاركنا صورة احترافية من تصويرك؟ ", 
-"تتابع انمي؟ إذا نعم ما أفضل انمي شاهدته ", 
-"يرد عليك متأخر على رسالة مهمة وبكل برود، موقفك؟ ", 
-"نصيحه تبدا ب -لا- ؟ ", 
-"كتاب أو رواية تقرأها هذه الأيام؟ ", 
-"فيلم عالق في ذهنك لا تنساه مِن روعته؟ ", 
-"يوم لا يمكنك نسيانه؟ ", 
-"شعورك الحالي في جملة؟ ", 
-"كلمة لشخص بعيد؟ ", 
-"صفة يطلقها عليك الشخص المفضّل؟ ", 
-"أغنية عالقة في ذهنك هاليومين؟ ", 
-"أكلة مستحيل أن تأكلها؟ ", 
-"كيف قضيت نهارك؟ ", 
-"تصرُّف ماتتحمله؟ ", 
-"موقف غير حياتك؟ ", 
-"اكثر مشروب تحبه؟ ", 
-"القصيدة اللي تأثر فيك؟ ", 
-"متى يصبح الصديق غريب ", 
-"وين نلقى السعاده برايك؟ ", 
-"تاريخ ميلادك؟ ", 
-"قهوه و لا شاي؟ ", 
-"من محبّين الليل أو الصبح؟ ", 
-"حيوانك المفضل؟ ", 
-"كلمة غريبة ومعناها؟ ", 
-"كم تحتاج من وقت لتثق بشخص؟ ", 
-"اشياء نفسك تجربها؟ ", 
-"يومك ضاع على؟ ", 
-"كل شيء يهون الا ؟ ", 
-"اسم ماتحبه ؟ ", 
-"وقفة إحترام للي إخترع ؟ ", 
-"أقدم شيء محتفظ فيه من صغرك؟ ", 
-"كلمات ماتستغني عنها بسوالفك؟ ", 
-"وش الحب بنظرك؟ ", 
-"حب التملك في شخصِيـتك ولا ؟ ", 
-"تخطط للمستقبل ولا ؟ ", 
-"موقف محرج ماتنساه ؟ ", 
-"من طلاسم لهجتكم ؟ ", 
-"اعترف باي حاجه ؟ ", 
-"عبّر عن مودك بصوره ؟ ",
-"آخر مره ضربت عشره كانت متى ؟", 
-"اسم دايم ع بالك ؟ ", 
-"اشياء تفتخر انك م سويتها ؟ ", 
-" لو بكيفي كان ؟ ", 
-  "أكثر جملة أثرت بك في حياتك؟ ",
-  "إيموجي يوصف مزاجك حاليًا؟ ",
-  "أجمل اسم بنت بحرف الباء؟ ",
-  "كيف هي أحوال قلبك؟ ",
-  "أجمل مدينة؟ ",
-  "كيف كان أسبوعك؟ ",
-  "شيء تشوفه اكثر من اهلك ؟ ",
-  "اخر مره فضفضت؟ ",
-  "قد كرهت احد بسبب اسلوبه؟ ",
-  "قد حبيت شخص وخذلك؟ ",
-  "كم مره حبيت؟ ",
-  "اكبر غلطة بعمرك؟ ",
-  "نسبة النعاس عندك حاليًا؟ ",
-  "شرايكم بمشاهير التيك توك؟ ",
-  "ما الحاسة التي تريد إضافتها للحواس الخمسة؟ ",
-  "اسم قريب لقلبك؟ ",
-  "مشتاق لمطعم كنت تزوره قبل الحظر؟ ",
-  "أول شيء يخطر في بالك إذا سمعت كلمة (ابوي يبيك)؟ ",
-  "ما أول مشروع تتوقع أن تقوم بإنشائه إذا أصبحت مليونير؟ ",
-  "أغنية عالقة في ذهنك هاليومين؟ ",
-  "متى اخر مره قريت قرآن؟ ",
-  "كم صلاة فاتتك اليوم؟ ",
-  "تفضل التيكن او السنقل؟ ",
-  "وش أفضل بوت برأيك؟ ",
-"كم لك بالتلي؟ ",
-"وش الي تفكر فيه الحين؟ ",
-"كيف تشوف الجيل ذا؟ ",
-"منشن شخص وقوله، تحبني؟ ",
-"لو جاء شخص وعترف لك كيف ترده؟ ",
-"مر عليك موقف محرج؟ ",
-"وين تشوف نفسك بعد سنتين؟ ",
-"لو فزعت/ي لصديق/ه وقالك مالك دخل وش بتسوي/ين؟ ",
-"وش اجمل لهجة تشوفها؟ ",
-"قد سافرت؟ ",
-"افضل مسلسل عندك؟ ",
-"افضل فلم عندك؟ ",
-"مين اكثر يخون البنات/العيال؟ ",
-"متى حبيت؟ ",
-  "بالعادة متى تنام؟ ",
-  "شيء من صغرك ماتغيير فيك؟ ",
-  "شيء بسيط قادر يعدل مزاجك بشكل سريع؟ ",
-  "تشوف الغيره انانيه او حب؟ ",
-"حاجة تشوف نفسك مبدع فيها؟ ",
-  "مع او ضد : يسقط جمال المراة بسبب قبح لسانها؟ ",
-  "عمرك بكيت على شخص مات في مسلسل ؟ ",
-  "- هل تعتقد أن هنالك من يراقبك بشغف؟ ",
-  "تدوس على قلبك او كرامتك؟ ",
-  "اكثر لونين تحبهم مع بعض؟ ",
-  "مع او ضد : النوم افضل حل لـ مشاكل الحياة؟ ",
-  "سؤال دايم تتهرب من الاجابة عليه؟ ",
-  "تحبني ولاتحب الفلوس؟ ",
-  "العلاقه السريه دايماً تكون حلوه؟ ",
-  "لو أغمضت عينيك الآن فما هو أول شيء ستفكر به؟ ",
-"كيف ينطق الطفل اسمك؟ ",
-  "ما هي نقاط الضعف في شخصيتك؟ ",
-  "اكثر كذبة تقولها؟ ",
-  "تيكن ولا اضبطك؟ ",
-  "اطول علاقة كنت فيها مع شخص؟ ",
-  "قد ندمت على شخص؟ ",
-  "وقت فراغك وش تسوي؟ ",
-  "عندك أصحاب كثير؟ ولا ينعد بالأصابع؟ ",
-  "حاط نغمة خاصة لأي شخص؟ ",
-  "وش اسم شهرتك؟ ",
-  "أفضل أكلة تحبه لك؟ ",
-"عندك شخص تسميه ثالث والدينك؟ ",
-  "عندك شخص تسميه ثالث والدينك؟ ",
-  "اذا قالو لك تسافر أي مكان تبيه وتاخذ معك شخص واحد وين بتروح ومين تختار؟ ",
-  "أطول مكالمة كم ساعة؟ ",
-  "تحب الحياة الإلكترونية ولا الواقعية؟ ",
-  "كيف حال قلبك ؟ بخير ولا مكسور؟ ",
-  "أطول مدة نمت فيها كم ساعة؟ ",
-  "تقدر تسيطر على ضحكتك؟ ",
-  "أول حرف من اسم الحب؟ ",
-  "تحب تحافظ على الذكريات ولا تمسحه؟ ",
-  "اسم اخر شخص زعلك؟ ",
-"وش نوع الأفلام اللي تحب تتابعه؟ ",
-  "أنت انسان غامض ولا الكل يعرف عنك؟ ",
-  "لو الجنسية حسب ملامحك وش بتكون جنسيتك؟ ",
-  "عندك أخوان او خوات من الرضاعة؟ ",
-  "إختصار تحبه؟ ",
-  "إسم شخص وتحس أنه كيف؟ ",
-  "وش الإسم اللي دايم تحطه بالبرامج؟ ",
-  "وش برجك؟ ",
-  "لو يجي عيد ميلادك تتوقع يجيك هدية؟ ",
-  "اجمل هدية جاتك وش هو؟ ",
-  "الصداقة ولا الحب؟ ",
-"الصداقة ولا الحب؟ ",
-  "الغيرة الزائدة شك؟ ولا فرط الحب؟ ",
-    "هل انت دي تويت باعت باندا؟ ",
-  "قد حبيت شخصين مع بعض؟ وانقفطت؟ ",
-  "وش أخر شي ضيعته؟ ",
-  "قد ضيعت شي ودورته ولقيته بيدك؟ ",
-  "تؤمن بمقولة اللي يبيك مايحتار فيك؟ ",
-  "سبب وجوك بالتليجرام؟ ",
-  "تراقب شخص حاليا؟ ",
-  "عندك معجبين ولا محد درا عنك؟ ",
-  "لو نسبة جمالك بتكون بعدد شحن جوالك كم بتكون؟ ",
-  "أنت محبوب بين الناس؟ ولاكريه؟ ",
-"كم عمرك؟ ",
-  "لو يسألونك وش اسم امك تجاوبهم ولا تسفل فيهم؟ ",
-  "تؤمن بمقولة الصحبة تغنيك الحب؟ ",
-  "وش مشروبك المفضل؟ ",
-  "قد جربت الدخان بحياتك؟ وانقفطت ولا؟ ",
-  "أفضل وقت للسفر؟ الليل ولا النهار؟ ",
-  "انت من النوع اللي تنام بخط السفر؟ ",
-  "عندك حس فكاهي ولا نفسية؟ ",
-  "تبادل الكراهية بالكراهية؟ ولا تحرجه بالطيب؟ ",
-  "أفضل ممارسة بالنسبة لك؟ ",
-  "لو قالو لك تتخلى عن شي واحد تحبه بحياتك وش يكون؟ ",
-"لو احد تركك وبعد فتره يحاول يرجعك بترجع له ولا خلاص؟ ",
-  "برأيك كم العمر المناسب للزواج؟ ",
-  "اذا تزوجت بعد كم بتخلف عيال؟ ",
-  "فكرت وش تسمي أول اطفالك؟ ",
-  "من الناس اللي تحب الهدوء ولا الإزعاج؟ ",
-  "الشيلات ولا الأغاني؟ ",
-  "عندكم شخص مطوع بالعايلة؟ ",
-  "تتقبل النصيحة من اي شخص؟ ",
-  "اذا غلطت وعرفت انك غلطان تحب تعترف ولا تجحد؟ ",
-  "جربت شعور احد يحبك بس انت مو قادر تحبه؟ ",
-  "دايم قوة الصداقة تكون بإيش؟ ",
-"أفضل البدايات بالعلاقة بـ وش؟ ",
-  "وش مشروبك المفضل؟ او قهوتك المفضلة؟ ",
-  "تحب تتسوق عبر الانترنت ولا الواقع؟ ",
-  "انت من الناس اللي بعد ماتشتري شي وتروح ترجعه؟ ",
-  "أخر مرة بكيت متى؟ وليش؟ ",
-  "عندك الشخص اللي يقلب الدنيا عشان زعلك؟ ",
-  "أفضل صفة تحبه بنفسك؟ ",
-  "كلمة تقولها للوالدين؟ ",
-  "أنت من الناس اللي تنتقم وترد الاذى ولا تحتسب الأجر وتسامح؟ ",
-  "كم عدد سنينك بالتليجرام؟ ",
-  "تحب تعترف ولا تخبي؟ ",
-"انت من الناس الكتومة ولا تفضفض؟ ",
-  "أنت بعلاقة حب الحين؟ ",
-  "عندك اصدقاء غير جنسك؟ ",
-  "أغلب وقتك تكون وين؟ ",
-  "لو المقصود يقرأ وش بتكتب له؟ ",
-  "تحب تعبر بالكتابة ولا بالصوت؟ ",
-  "عمرك كلمت فويس احد غير جنسك؟ ",
-  "لو خيروك تصير مليونير ولا تتزوج الشخص اللي تحبه؟ ",
-  "لو عندك فلوس وش السيارة اللي بتشتريها؟ ",
-  "كم أعلى مبلغ جمعته؟ ",
-  "اذا شفت احد على غلط تعلمه الصح ولا تخليه بكيفه؟ ",
-"قد جربت تبكي فرح؟ وليش؟ ",
-"تتوقع إنك بتتزوج اللي تحبه؟ ",
-  "ما هو أمنيتك؟ ",
-  "وين تشوف نفسك بعد خمس سنوات؟ ",
-  "هل انت حرامي تويت بتعت باندا؟ ",
-  "لو خيروك تقدم الزمن ولا ترجعه ورا؟ ",
-  "لعبة قضيت وقتك فيه بالحجر المنزلي؟ ",
-  "تحب تطق الميانة ولا ثقيل؟ ",
-  "باقي معاك للي وعدك ما بيتركك؟ ",
-  "اول ماتصحى من النوم مين تكلمه؟ ",
-  "عندك الشخص اللي يكتب لك كلام كثير وانت نايم؟ ",
-  "قد قابلت شخص تحبه؟ وولد ولا بنت؟ ",
-   "هل انت تحب باندا؟ ",
-"اذا قفطت احد تحب تفضحه ولا تستره؟ ",
-  "كلمة للشخص اللي يسب ويسطر؟ ",
-  "آية من القران تؤمن فيه؟ ",
-  "تحب تعامل الناس بنفس المعاملة؟ ولا تكون أطيب منهم؟ ",
-"حاجة ودك تغييرها هالفترة؟ ",
-  "كم فلوسك حاليا وهل يكفيك ام لا؟ ",
-  "وش لون عيونك الجميلة؟ ",
-  "من الناس اللي تتغزل بالكل ولا بالشخص اللي تحبه بس؟ ",
-  "اذكر موقف ماتنساه بعمرك؟ ",
-  "وش حاب تقول للاشخاص اللي بيدخل حياتك؟ ",
-  "ألطف شخص مر عليك بحياتك؟ ",
-   "هل باندا لطيف؟ ",
-"انت من الناس المؤدبة ولا نص نص؟ ",
-  "كيف الصيد معاك هالأيام ؟ وسنارة ولاشبك؟ ",
-  "لو الشخص اللي تحبه قال بدخل حساباتك بتعطيه ولا تكرشه؟ ",
-  "أكثر شي تخاف منه بالحياه وش؟ ",
-  "اكثر المتابعين عندك باي برنامج؟ ",
-  "متى يوم ميلادك؟ ووش الهدية اللي نفسك فيه؟ ",
-  "قد تمنيت شي وتحقق؟ ",
-  "قلبي على قلبك مهما صار لمين تقولها؟ ",
-  "وش نوع جوالك؟ واذا بتغييره وش بتأخذ؟ ",
-  "كم حساب عندك بالتليجرام؟ ",
-  "متى اخر مرة كذبت؟ ",
-"كذبت في الاسئلة اللي مرت عليك قبل شوي؟ ",
-  "تجامل الناس ولا اللي بقلبك على لسانك؟ ",
-  "قد تمصلحت مع أحد وليش؟ ",
-  "وين تعرفت على الشخص اللي حبيته؟ ",
-  "قد رقمت او احد رقمك؟ ",
-  "وش أفضل لعبته بحياتك؟ ",
-  "أخر شي اكلته وش هو؟ ",
-  "حزنك يبان بملامحك ولا صوتك؟ ",
-  "لقيت الشخص اللي يفهمك واللي يقرا افكارك؟ ",
-  "فيه شيء م تقدر تسيطر عليه ؟ ",
-  "منشن شخص متحلطم م يعجبه شيء؟ ",
-"اكتب تاريخ مستحيل تنساه ",
-  "شيء مستحيل انك تاكله ؟ ",
-  "تحب تتعرف على ناس جدد ولا مكتفي باللي عندك ؟ ",
-  "انسان م تحب تتعامل معاه ابداً ؟ ",
-  "شيء بسيط تحتفظ فيه؟ ",
-  "فُرصه تتمنى لو أُتيحت لك ؟ ",
-   "لي باندا ناك اليكس؟ ",
-  "شيء مستحيل ترفضه ؟. ",
-  "لو زعلت بقوة وش بيرضيك ؟ ",
-  "تنام بـ اي مكان ، ولا بس غرفتك ؟ ",
-  "ردك المعتاد اذا أحد ناداك ؟ ",
-  "مين الي تحب يكون مبتسم دائما ؟ ",
-" إحساسك في هاللحظة؟ ",
-  "وش اسم اول شخص تعرفت عليه فالتلقرام ؟ ",
-  "اشياء صعب تتقبلها بسرعه ؟ ",
-  "شيء جميل صار لك اليوم ؟ ",
-  "اذا شفت شخص يتنمر على شخص قدامك شتسوي؟ ",
-  "يهمك ملابسك تكون ماركة ؟ ",
-  "ردّك على شخص قال (أنا بطلع من حياتك)؟. ",
-  "مين اول شخص تكلمه اذا طحت بـ مصيبة ؟ ",
-  "تشارك كل شي لاهلك ولا فيه أشياء ما تتشارك؟ ",
-  "كيف علاقتك مع اهلك؟ رسميات ولا ميانة؟ ",
-  "عمرك ضحيت باشياء لاجل شخص م يسوى ؟ ",
-"اكتب سطر من اغنية او قصيدة جا فـ بالك ؟ ",
-  "شيء مهما حطيت فيه فلوس بتكون مبسوط ؟ ",
-  "مشاكلك بسبب ؟ ",
-  "نسبه الندم عندك للي وثقت فيهم ؟ ",
-  "اول حرف من اسم شخص تقوله? بطل تفكر فيني ابي انام؟ ",
-  "اكثر شيء تحس انه مات ف مجتمعنا؟ ",
-  "لو صار سوء فهم بينك وبين شخص هل تحب توضحه ولا تخليه كذا  لان مالك خلق توضح ؟ ",
-  "كم عددكم بالبيت؟ ",
-  "عادي تتزوج من برا القبيلة؟ ",
-  "أجمل شي بحياتك وش هو؟ ",
+local texting = {"كيف حالك بالمواقف الصعبة، صبور أم تنفجر ؟", 
+  "شيء لطيف حدث معك مؤخرًا ؟ ",
+  "عادي تتزوج من برا القبيلة ؟ ",
+"ماذا يفعل شخصًا تقدم لفتاة يعرفها رفضته دون أي سبب واضح ؟ ",
+"لو قالوا لك سنحضر لك أي شخص تتمناه، مَن ستختار ؟ ",
+"ماذا لو عاد مُعتذرًا ؟ ",
+"هل فعلا راحت الأيام الحلوة ؟ ",
+"‏شاركنا مقولة جميلة تحبها...؟ ",
+"لو أتيح لك أن توجه سؤال إلى شخص في بالك، ماذا ستقول له ",
+"صفه ورثتها من والديك ؟ ",
+"نادي كرة قدم لن تتوقف عن تشجيعه مهما حصل ؟ ",
+"متى يتغير الشخص ؟ ",
+"شاركني نصًا قصيرًا , بمعنى عميق ",
+"هل انت شخص هادئ بطبعه ؟ ",
+"هل شعرت يوماً أنك بمنتهى الغباء لأنك كنت صادقاً بما يكفي ؟ ",
+"أكثر مرة ابتعدت فيها عن التيليجرام كم كانت ؟ ",
+"برأيك، ما هو سبب انحدار جودة أفلام هوليود في هذه الأيام ؟ ",
+"هل شاهدت فلمًا من قبل وشعرت بأنه صعب الفهم ؟ ",
+"أشياء لو قام الناس بإلغائها من حياتهم ستصبح أفضل ؟ ",
+"أكثر شيء لاحظت أنه تغيّر في هذا الزمن ؟ ",
+"بماذا تُفكر الأن ؟ ",
+"شاركنا آخر صورة جميلة من كاميرا هاتفك..📸 ",
+"هل هناك فنان تظن أنه مظلوم ولا يحظى بالتقدير الذي يستحقه ؟ ",
+"هل يوجد فيلم أبهرك بمحتواه لدرجة لا تمل إعادته ؟ ",
+"هل سهل عليك أن تقول: أنا غلطان أنا فهمت غلطي ؟ ",
+"ما هي أسوأ الأشياء برأيك ؟ ",
+"ضع علامة @ وثالث شخص يجهز نفسه يعزمك على بيتزا🍕 ",
+"فنان او فنانة ودك تشوفه ؟ ",
+"أجمل اسم بنت من وجهة نظرك ؟ ",
+"شعورك الحالي في جُملة قصيرة ؟ ",
+"ما هي أمنيتك التي تتمناها أن تحدث ولم تحدث إلى الآن ؟ ",
+"ربحت تذكرة سفر لشخصين، مَن ستأخذ معك وإلى أين ؟ ",
+"صفة مشتركة بينك وبين اخوانك ؟ ",
+"جملة تتمنى أن يقولها لك الشخص اللي في بالك ؟ ",
+"اعتذار تريد أن تقدمه لمن ؟ ",
+"شي جميل سويته وأسعدك فعله ؟ ",
+"ماذا تريد من هذه الحياة ؟ ",
+"مِن الأشياء البسيطة التي تسعدك ؟ ",
+"ما هي برأيك أسوأ موضة ثياب أو مظهر قد درجت في الآونة الأخيرة ؟ ",
+"هل يمكن أن يتغير الرجل من أجل امرأة أحبها ؟ ",
+"سؤال يصلك دائمًا ؟ ",
+"الشخص الذي يحقد عليك بدون سبب، ماذا تقول له ؟ ",
+"كلمة توصف شعورك حاليًا ؟ ",
+"شي لطيف حدث لك مؤخرًا ؟ ",
+"لماذا يعتقد البعض أن الخيانة تجوز إذا قلَّ الإهتمام ؟ ",
+"أسلوبك يتحول برود لما ... ؟ ",
+"أسم ماتثق فيه ؟ ",
+"أحبك لما ... ؟ ",
+"تاريخ تحبه ؟ ",
+"كيف هو حال قلبك ؟ ",
+"صورة صورتها .... وتحبها ؟ ",
+"وش افضل مكافئه تقدمها لنفسك هالأيام ؟ ",
+"ما هو العمر الذي تتمنى أن تثبت عليه ؟ ",
+"أكثر إيموجي نفسية بالنسبة لك ؟ ",
+"كلمه لشخص مشتاق له ؟ ",
+"ماهو الوزن اللي تطمح توصل له ؟ ",
+"لماذا دائمًا المخلص في الحب يتعرض للخيانة ؟ ",
+"أكثر شيء تحب أن تهتم به ؟ ",
+"مفهومك للكرامة ؟ ",
+"يومك في كلمة ؟ ",
+"النفسية تحتاج ....؟ ",
+"ما هو أهم شيء في الحياة ؟ ",
+"بماذا تختلف عن الآخرين ؟ ",
+"صورة لها ذكرى لا تنساها ؟ ",
+"صفة تجمّل الشخص برأيك ؟ ",
+"قناعة اكتسبتها من التيليجرام ؟ ",
+"أفضل شيء تعلمته على الاطلاق ؟ ",
+"ما رأيك بمقولة ( المحطّمون هم الأكثر تطورًا ) ؟ ",
+"إيموجي يعبر عن مزاجك حاليًا ؟ ",
+"طباع لا تطيقها في شخص تتعامل معه ؟ ",
+"شيء تملكه ولا يملكه غيرك ؟ ",
+"مِن أجمل الهدايا التي وصلتك ؟ ",
+"أقدم رائحة عطر تمتلكها ولا زلت تحافظ على استخدامها ؟ ",
+"هل تحافظ على غرفتك منظمة ومرتبة دائمًا ؟ ",
+"كلمة توصف مشاعرك هاليومين ؟ ",
+"شيء ينقصك وموجود عند غيرك ؟ ",
+"صفة تهتم بأن تكون في شريك/ة حياتك ؟ ",
+"شيء لا يستطيع قلبك مقاومته ؟ ",
+"هل جربت يوما أن تتصنع صفة ليست فيك ؟ ",
+"فيلم شاهدته منذ مدة وأحداثه عالقة في ذهنك ؟ ",
+"كم سنه صار لك في التيليجرام ؟ ",
+"حدثنا عن أغرب بلوك وصلك ؟ ",
+"أجمل واسعد لحظه مرت في حياتك ؟ ",
+"نومك خفيف ولا ثقيل ؟ ",
+"الغيرة الزايدة مرض أم حب ؟ ",
+"مارأيك باللطف.. هل فعلا اللطفاء نادرون؟ ",
+"هل أنت من الأشخاص الذين يسهل استفزازهم ؟ ",
+"مُشتاق ... ؟ ",
+"اسم تبتسم بمجرد ذكر اسمه أمامك ؟ ",
+"أكثر شيء تهتم بشرائه ؟ ",
+"لو لك دعوة مُستجابة بماذا تدعو ؟ ",
+"أجمل مُسلسل شاهدته ؟ ",
+"وش تشوف نفسك بعد 10 سنين ؟ ",
+"مسائك الأن في كلمة ؟ ",
+"صباحك الأن في كلمة ؟ ",
+        "أجمل شي بحياتك وش هو ؟ ",
 } 
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
@@ -10562,18 +10361,44 @@ name = string.gsub(name,"الثلج","انا ابن الماء فان تركون
 name = string.gsub(name,"الاسفنج","كلي ثقوب ومع ذالك احفض الماء فمن اكون ؟")
 name = string.gsub(name,"الصوت","اسير بلا رجلين ولا ادخل الا بالاذنين فمن انا ؟")
 name = string.gsub(name,"بلم","حامل ومحمول نصف ناشف ونصف مبلول فمن اكون ؟ ")
-return LuaTele.sendText(msg_chat_id,msg_id,"• اسرع واحد يحل الحزوره ↓\n ( "..name.." )","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• ( "..name.." )","md",true)  
 end
 end
 if text == "معاني" then
 if Redis:get(FDFGERB.."FDFGERB:Status:Games"..msg.chat_id) then
 Redis:del(FDFGERB.."FDFGERB:Set:Maany"..msg.chat_id)
-Maany_Rand = {"قرد","دجاجه","بطريق","ضفدع","بومه","نحله","ديك","جمل","بقره","دولفين","تمساح","قرش","نمر","اخطبوط","سمكه","خفاش","اسد","فأر","ذئب","فراشه","عقرب","زرافه","قنفذ","تفاحه","باذنجان"}
+Maany_Rand = {"قرد","دجاجه","بطريق","انف","فم","دماغ","امراة","طفل","جينز","نظارات","مظلة","فستان","معطف","وشاح","قفازات","تاج","خاتم","حقيبة","شبح","عفريت","زق","غزال","ثور","لاما","فرس النهر","فيل","وحيد القرن","سنجاب","طاووس","ضفدع","بومه","نحله","ديك","جمل","بقره","دولفين","تمساح","قرش","نمر","اخطبوط","سمكه","خفاش","اسد","فار","ذئب","فراشه","عقرب","زرافه","قنفذ","تفاحه","باذنجان"}
 name = Maany_Rand[math.random(#Maany_Rand)]
 Redis:set(FDFGERB.."FDFGERB:Game:Meaningof"..msg.chat_id,name)
 name = string.gsub(name,"قرد","🐒")
 name = string.gsub(name,"دجاجه","🐔")
 name = string.gsub(name,"بطريق","🐧")
+name = string.gsub(name,"انف","👃")
+name = string.gsub(name,"فم","👄")
+name = string.gsub(name,"دماغ","🧠")
+name = string.gsub(name,"امراة","👩")
+name = string.gsub(name,"طفل","🧒")
+name = string.gsub(name,"جينز","👖")
+name = string.gsub(name,"نظارات","👓")
+name = string.gsub(name,"مظلة","☂️")
+name = string.gsub(name,"فستان","👗")
+name = string.gsub(name,"معطف","🧥")
+name = string.gsub(name,"وشاح","🧣")
+name = string.gsub(name,"قفازات","🧤")
+name = string.gsub(name,"تاج","👑")
+name = string.gsub(name,"خاتم","💍")
+name = string.gsub(name,"حقيبة","💼")
+name = string.gsub(name,"شبح","👻")
+name = string.gsub(name,"عفريت","👺")
+name = string.gsub(name,"زق","💩")
+name = string.gsub(name,"غزال","🦌")
+name = string.gsub(name,"ثور","🐂")
+name = string.gsub(name,"لاما","🦙")
+name = string.gsub(name,"فرس النهر","🦛")
+name = string.gsub(name,"فيل","🐘")
+name = string.gsub(name,"وحيد القرن","🦏")
+name = string.gsub(name,"سنجاب","🐿")
+name = string.gsub(name,"طاووس","🦚")
 name = string.gsub(name,"ضفدع","🐸")
 name = string.gsub(name,"بومه","🦉")
 name = string.gsub(name,"نحله","🐝")
@@ -10586,9 +10411,9 @@ name = string.gsub(name,"قرش","🦈")
 name = string.gsub(name,"نمر","🐅")
 name = string.gsub(name,"اخطبوط","🐙")
 name = string.gsub(name,"سمكه","🐟")
-name = string.gsub(name,"خفاش","??")
+name = string.gsub(name,"خفاش","🦇")
 name = string.gsub(name,"اسد","🦁")
-name = string.gsub(name,"فأر","🐭")
+name = string.gsub(name,"فار","🐭")
 name = string.gsub(name,"ذئب","🐺")
 name = string.gsub(name,"فراشه","🦋")
 name = string.gsub(name,"عقرب","🦂")
@@ -10599,37 +10424,48 @@ name = string.gsub(name,"باذنجان","🍆")
 return LuaTele.sendText(msg_chat_id,msg_id,"• معنى ايموجي ( "..name.." )","md",true)  
 end
 end
-if text == "العكس" then
+if text == "العكس" or text == "عكس" then
 if Redis:get(FDFGERB.."FDFGERB:Status:Games"..msg.chat_id) then
 Redis:del(FDFGERB.."FDFGERB:Set:Aks"..msg.chat_id)
-katu = {"باي","فهمت","موزين","اسمعك","احبك","موحلو","نضيف","حاره","ناصي","جوه","سريع","ونسه","طويل","سمين","ضعيف","شريف","شجاع","رحت","عدل","نشيط","شبعان","موعطشان","خوش ولد","اني","هادئ"}
+katu = {"باي","ملاك","خلف","بعيد","واسع","خارج","يهاجم","يوفر","تحت","فقير","فاشل","متزوج","حزين","كذاب","خارج","احبك","يمين","نظيف","حار","سلام","صعب","سريع","عدو","طويل","سمين","ضعيف","قبيح","شجاع","رحت","عادل","نشيط","خفيف","ناعم","غبي","جاف","هادى"}
 name = katu[math.random(#katu)]
 Redis:set(FDFGERB.."FDFGERB:Game:Reflection"..msg.chat_id,name)
-name = string.gsub(name,"باي","هلو")
-name = string.gsub(name,"فهمت","مافهمت")
-name = string.gsub(name,"موزين","زين")
-name = string.gsub(name,"اسمعك","ماسمعك")
-name = string.gsub(name,"احبك","ماحبك")
-name = string.gsub(name,"موحلو","حلو")
-name = string.gsub(name,"نضيف","وصخ")
-name = string.gsub(name,"حاره","بارده")
-name = string.gsub(name,"ناصي","عالي")
-name = string.gsub(name,"جوه","فوك")
+name = string.gsub(name,"باي","هاي")
+name = string.gsub(name,"ملاك","شيطان")
+name = string.gsub(name,"خلف","أمام")
+name = string.gsub(name,"بعيد","قريب")
+name = string.gsub(name,"واسع","ضيق")
+name = string.gsub(name,"خارج","داخل")
+name = string.gsub(name,"يهاجم","يدافع")
+name = string.gsub(name,"يوفر","ينفق")
+name = string.gsub(name,"تحت","فوق")
+name = string.gsub(name,"فقير","غني")
+name = string.gsub(name,"فاشل","ناجح")
+name = string.gsub(name,"متزوج","اعزب")
+name = string.gsub(name,"حزين","سعيد")
+name = string.gsub(name,"كذاب","صادق")
+name = string.gsub(name,"خارج","داخل")
+name = string.gsub(name,"احبك","اكرهك")
+name = string.gsub(name,"يمين","يسار")
+name = string.gsub(name,"نظيف","وصخ")
+name = string.gsub(name,"حار","بارد")
+name = string.gsub(name,"سلام","حرب")
+name = string.gsub(name,"صعب","سهل")
 name = string.gsub(name,"سريع","بطيء")
-name = string.gsub(name,"ونسه","ضوجه")
-name = string.gsub(name,"طويل","قزم")
+name = string.gsub(name,"عدو","صديق")
+name = string.gsub(name,"طويل","قصير")
 name = string.gsub(name,"سمين","ضعيف")
 name = string.gsub(name,"ضعيف","قوي")
-name = string.gsub(name,"شريف","كواد")
+name = string.gsub(name,"قبيح","جميل")
 name = string.gsub(name,"شجاع","جبان")
-name = string.gsub(name,"رحت","اجيت")
-name = string.gsub(name,"عدل","ميت")
+name = string.gsub(name,"رحت","جيت")
+name = string.gsub(name,"عادل","ظالم")
 name = string.gsub(name,"نشيط","كسول")
-name = string.gsub(name,"شبعان","جوعان")
-name = string.gsub(name,"موعطشان","عطشان")
-name = string.gsub(name,"خوش ولد","موخوش ولد")
-name = string.gsub(name,"اني","مطي")
-name = string.gsub(name,"هادئ","عصبي")
+name = string.gsub(name,"خفيف","ثقيل")
+name = string.gsub(name,"ناعم","خشن")
+name = string.gsub(name,"غبي","ذكي")
+name = string.gsub(name,"جاف","رطب")
+name = string.gsub(name,"هادى","عصبي")
 return LuaTele.sendText(msg_chat_id,msg_id,"• عكس كلمه ( "..name.." )","md",true)  
 end
 end
@@ -10665,7 +10501,7 @@ end
 end
 if text == "المختلف" then
 if Redis:get(FDFGERB.."FDFGERB:Status:Games"..msg.chat_id) then
-mktlf = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","👨‍🔧","🧚‍♀","??‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","🕒","🕤","⌛️","📅",};
+mktlf = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍🔧","🧚‍♀","🧜‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","🕒","🕤","⌛️","📅",};
 name = mktlf[math.random(#mktlf)]
 Redis:set(FDFGERB.."FDFGERB:Game:Difference"..msg.chat_id,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
@@ -10680,7 +10516,6 @@ name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
 name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
-name = string.gsub(name,"👨‍💻","👩‍💻👩‍??👩‍‍💻👩‍‍??👩‍‍💻👨‍💻??‍💻👩‍💻👩‍💻")
 name = string.gsub(name,"👨‍🔧","👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👨‍🔧👩‍🔧")
 name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍🍳👨‍🍳??‍🍳")
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
@@ -10761,7 +10596,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, "• عدد الجواهر التي 
 end
 end
 
-if text == 'ترتيب الاوامر' then
+if text == '' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
@@ -10775,9 +10610,9 @@ Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'C','رفع C')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ما', 'رفع مالك')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ما اس', 'رفع منشئ اساسي')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'M','رفع M')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
@@ -10786,7 +10621,7 @@ Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد'
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'CM','رفع CM')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'M','رفع MY')
 
 return LuaTele.sendText(msg_chat_id,msg_id,[[
 • تم ترتيب الاوامر بالشكل التالي ~
@@ -10844,7 +10679,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات كاي', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10857,7 +10692,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات كاي', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -10928,7 +10763,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه السورس ↤ [𝑺𝒐𝒖𝒓𝒄𝒆 𝑩𝒍𝒂𝒄𝒌](t.me/ZFFF8)', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه السورس ↤ [𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚](t.me/CSSS3)', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == 'تنظيف المشتركين' then
@@ -11296,7 +11131,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح ( "..#Info_Members..
 end
 if text == 'مسح المكتومين العام' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n• هذا الامر يخص { Dev } فقط .  ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n• هذا الامر يخص { Dev🎖 } فقط .  ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(FDFGERB..'FDFGERB:Channel:Join:Name')..'', url = 't.me/'..Redis:get(FDFGERB..'FDFGERB:Channel:Join')}, },}}
@@ -11796,7 +11631,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -11884,7 +11719,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -11934,7 +11769,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -12001,7 +11836,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -12044,7 +11879,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -12089,7 +11924,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/zfff8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -12131,7 +11966,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/ZFFF8'}, 
+{text = '❲ 𝑆𝑜𝑢𝑟𝑐𝑒 𝐷𝑟𝑒𝑒𝑚 ❳', url = 't.me/CSSS3'}, 
 },
 }
 }
@@ -12977,6 +12812,22 @@ LuaTele.answerCallbackQuery(data.id, "• تم تفعيل صلاحيه اضاف�
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,nil,'❬ ✔️ ❭')
 LuaTele.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, 1})
 end
+end
+end
+if Text and Text:match("(%d+)/toop5") then
+local UserId = Text:match("(%d+)/toop5")
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = "inline",
+data = {
+{
+{text = '𝐃𝐑𝐄𝐄𝐌', url = 't.me/CSSS3'}, 
+},
+}
+}
+end
+end
+LuaTele.editMessageText(ChatId,Msg_id,top_mony..gg, "md", true, false, reply_markup)
 end
 end
 
@@ -13960,7 +13811,6 @@ end
 end
 luatele.run(CallBackLua)
  
-
 
 
 
